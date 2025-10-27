@@ -1,22 +1,86 @@
-<section class="hero-parallax-container">
-    <div class="parallax-background layer-1"></div>
-    <div class="parallax-figure layer-2"></div>
-    <div class="parallax-planet layer-3"></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2INVITES | ACCOUNT - BIG UNIVERSE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="hero-content">
-        <nav class="navbar">
-            <div class="logo">2INVITES|ACCOUNT</div>
-            <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Generar</a></li>
-                <li><a href="#">Términos y Condiciones</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="hero-text">
-            <h1>BIG<span class="pipe">|</span>UNIVERSE</h1>
-            <p>NEW DISPENSER ACCOUNTS Y MAS!</p>
-            <button class="cta-button">Clic aquí</button>
+    <header class="hero-parallax-container">
+        <div class="parallax-layer layer-1" data-speed="0.2"></div> <div class="parallax-layer layer-2" data-speed="0.4"></div> <div class="parallax-layer layer-3" data-speed="0.6"></div> <div class="hero-content">
+            <nav class="navbar">
+                <div class="logo">2INVITES<span class="pipe">|</span>ACCOUNT</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#generar">Generar</a></li>
+                    <li><a href="#terminos">Términos y Condiciones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="hero-text">
+                <h1>BIG<span class="pipe">|</span>UNIVERSE</h1>
+                <p>NEW DISPENSER ACCOUNTS Y MAS!</p>
+                <button class="cta-button">Clic aquí</button>
+            </div>
         </div>
-    </div>
-</section>
+    </header>
+
+    <main>
+        <section id="terminos" class="content-section parallax-fixed-bg">
+            <div class="section-overlay">
+                <h2>Términos y Servicios</h2>
+                <div class="icon-row">
+                    <img src="images/icon-gift.png" alt="Regalo Premium" class="section-icon">
+                    <img src="images/icon-service.png" alt="Servicio Estelar" class="section-icon">
+                    <span class="legit-badge">LEGIT</span>
+                </div>
+                <p>Al utilizar esta web o verificar su nuevo Servicio Usted está de acuerdo con nuestros Términos y Servicios que podrá encontrar un poco más abajo, cabe acotar que NOSOTROS NO somos afectos a ninguna empresa ya sea Crunchyroll, Disney+, HBO entre otras...</p>
+                <div class="info-columns">
+                    <div class="info-card">
+                        <p>Los productos mostrados tienen funciones de cuentas que se habilitan a contactar, ademas tienen un agradable caminar y duración en el tiempo.</p>
+                    </div>
+                    <div class="info-card">
+                        <p>Iniciamos todo tipo de regalos verificados a la totalidad de las personas que nos van a seguir de acuerdo a los términos de seguridad de contacto los regalos por lo general tienen una gran cantidad y premium!</p>
+                    </div>
+                    <div class="info-card">
+                        <p>BIG UNIVERSE no se relaciona directamente con el uso incorrecto de las cuentas que usted consigue a través de nuestros servicios o webs aliadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="generar" class="content-section parallax-fixed-bg-2">
+            <div class="section-overlay">
+                <h2>Generar Cuentas</h2>
+                <p>Descubre cómo obtener tus nuevas cuentas premium de forma rápida y segura.</p>
+                <button class="cta-button">Empezar a Generar</button>
+            </div>
+        </section>
+
+        <section id="contacto" class="content-section">
+            <div class="section-overlay">
+                <h2>Contáctanos</h2>
+                <p>¿Tienes preguntas? ¡Estamos aquí para ayudarte a navegar por el universo!</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Tu Nombre">
+                    <input type="email" placeholder="Tu Email">
+                    <textarea placeholder="Tu Mensaje"></textarea>
+                    <button type="submit" class="cta-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 2INVITES|ACCOUNT. Todos los derechos reservados.</p>
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
