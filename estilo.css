@@ -1,27 +1,42 @@
+/* Variables CSS para consistencia de color y fuentes */
+:root {
+    --color-universe-dark: #08000A; /* Casi negro, pero con un toque de púrpura */
+    --color-purple-deep: #4A004A;
+    --color-purple-neon: #C24DFF;
+    --color-white-estelar: #E0E0E0;
+    --color-gray-text: #D3D3D3;
+
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* Estilos Generales y Reset */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif; /* O la fuente que elijas */
-    color: #E0E0E0;
-    overflow-x: hidden; /* Evita scroll horizontal */
+    font-family: var(--font-body);
+    color: var(--color-white-estelar);
+    line-height: 1.6;
+    background-color: var(--color-universe-dark);
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces */
 }
 
+/* --- HEADER / SECCIÓN HÉROE --- */
 .hero-parallax-container {
     position: relative;
     width: 100%;
     height: 100vh; /* Altura de la vista para pantalla completa */
-    overflow: hidden; /* Muy importante para contener las capas */
+    overflow: hidden; /* Importante para contener las capas Parallax */
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Permite que el nav y el texto se apilen */
+    justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: #000000; /* Fondo de respaldo */
+    background-color: var(--color-universe-dark); /* Fondo de respaldo */
 }
 
 /* Estilos para las capas Parallax */
-.parallax-background,
-.parallax-figure,
-.parallax-planet {
+.parallax-layer {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,55 +45,65 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* Transición para suavizar el movimiento Parallax (opcional) */
-    transition: transform 0.1s linear; 
+    will-change: transform; /* Sugiere al navegador optimizar animaciones */
 }
 
-.parallax-background {
-    background-image: url('url-de-tu-galaxia-fondo.jpg'); /* La imagen más lejana */
-    z-index: 1; /* La capa más baja */
+/* Imágenes de marcador de posición para las capas */
+/* Asegúrate de reemplazar estas URLs con tus imágenes de Sora */
+.parallax-layer.layer-1 {
+    background-image: url('images/galaxy-background.jpg'); /* La imagen más lejana */
+    z-index: 1; 
 }
 
-.parallax-figure {
-    background-image: url('url-de-tu-figura-abstracta.png'); /* Asegúrate de que tenga fondo transparente */
+.parallax-layer.layer-2 {
+    background-image: url('images/abstract-nebula.png'); /* Figura central o nebulosa más cercana (PNG transparente) */
     background-size: contain; /* Para que la figura se ajuste sin cortarse */
-    background-position: center bottom; /* O donde mejor quede la figura */
-    z-index: 2; /* Encima del fondo */
+    background-position: center 60%; /* Ajusta la posición vertical */
+    z-index: 2;
 }
 
-.parallax-planet {
-    background-image: url('url-de-tu-planeta-flotante.png'); /* Con fondo transparente */
-    background-size: 30%; /* Ajusta el tamaño del planeta */
-    background-position: 80% 60%; /* Posición del planeta */
-    z-index: 3; /* Encima de la figura */
+.parallax-layer.layer-3 {
+    background-image: url('images/floating-planet.png'); /* Planeta o detalles más cercanos (PNG transparente) */
+    background-size: 35%; /* Ajusta el tamaño del planeta */
+    background-position: 80% 50%; /* Ajusta la posición del planeta */
+    z-index: 3;
 }
 
-/* Contenido (logo, nav, texto) que debe estar encima de todo */
+
+/* Contenido del Héroe (Navbar y Texto) */
 .hero-content {
-    position: relative; /* Para que esté por encima de las capas parallax */
-    z-index: 10; /* Muy alto para asegurar visibilidad */
+    position: relative;
+    z-index: 10; /* Siempre encima de las capas Parallax */
     width: 100%;
-    height: 100%;
+    height: 100%; /* Para que ocupe todo el espacio y justifique contenido */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Para empujar el nav arriba y el texto al centro */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
+    padding-bottom: 50px; /* Espacio para el botón si está muy abajo */
+    box-sizing: border-box; /* Incluye padding en el height */
 }
 
+/* Navbar */
 .navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px; /* Espacio a los lados */
+    padding: 20px 50px;
+    box-sizing: border-box;
 }
 
 .logo {
     font-weight: bold;
-    font-size: 1.5em;
-    color: #C24DFF; /* Color neón para el logo */
+    font-size: 1.8em;
+    color: var(--color-purple-neon);
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(194, 77, 255, 0.6); /* Efecto neón suave */
+}
+
+.logo .pipe {
+    color: var(--color-white-estelar);
 }
 
 .nav-links {
@@ -89,22 +114,24 @@ body, html {
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 40px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #E0E0E0;
+    color: var(--color-gray-text);
     font-size: 1.1em;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #C24DFF;
+    color: var(--color-purple-neon);
+    text-shadow: 0 0 5px rgba(194, 77, 255, 0.8);
 }
 
+/* Texto del Héroe */
 .hero-text {
-    flex-grow: 1; /* Para que el texto ocupe el espacio central */
+    flex-grow: 1; /* Para centrar el contenido verticalmente */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,36 +140,299 @@ body, html {
 }
 
 .hero-text h1 {
-    font-family: 'Oswald', sans-serif; /* O la fuente que elijas para titulares */
-    font-size: 5em;
+    font-family: var(--font-heading);
+    font-size: 6em; /* Aumentado para mayor impacto */
     margin: 0;
-    letter-spacing: 5px;
-    color: white; /* O un ligero degradado de púrpura a blanco */
+    letter-spacing: 8px; /* Más espaciado */
+    color: var(--color-white-estelar);
+    text-shadow: 0 0 20px rgba(194, 77, 255, 0.7); /* Sombra neón */
 }
 
 .hero-text h1 .pipe {
-    color: #C24DFF; /* Color de acento para el separador */
+    color: var(--color-purple-neon);
 }
 
 .hero-text p {
-    font-size: 1.5em;
-    margin-top: 10px;
-    color: #D3D3D3;
+    font-size: 1.6em;
+    margin-top: 15px;
+    color: var(--color-gray-text);
+    max-width: 80%;
 }
 
 .cta-button {
-    background-color: #C24DFF;
+    background-color: var(--color-purple-neon);
     color: white;
     border: none;
-    padding: 15px 40px;
-    font-size: 1.2em;
-    margin-top: 30px;
+    padding: 18px 45px; /* Más grande */
+    font-size: 1.3em;
+    margin-top: 40px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px; /* Bordes más suaves */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(194, 77, 255, 0.4); /* Sombra suave */
 }
 
 .cta-button:hover {
-    background-color: #A032FF;
-    transform: translateY(-3px);
+    background-color: #A032FF; /* Púrpura más oscuro al hover */
+    transform: translateY(-5px) scale(1.02); /* Pequeño levantamiento y agrandamiento */
+    box-shadow: 0 8px 20px rgba(194, 77, 255, 0.6);
+}
+
+/* --- SECCIONES DE CONTENIDO --- */
+.content-section {
+    position: relative;
+    padding: 80px 0;
+    min-height: 70vh; /* Altura mínima para que el Parallax fijo se vea bien */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Parallax Fijo para Secciones de Contenido */
+.parallax-fixed-bg {
+    background-image: url('images/nebula-fixed.jpg'); /* Imagen de nebulosa o espacio para fondo fijo */
+    background-attachment: fixed; /* LA CLAVE DEL PARALLAX FIJO */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* Para que el overlay funcione */
+}
+
+/* Variación para otra sección, si quieres un fondo diferente */
+.parallax-fixed-bg-2 {
+    background-image: url('images/dark-planets-fixed.jpg'); /* Otra imagen para el fondo fijo */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.section-overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Superposición oscura para que el texto sea legible */
+    padding: 60px 40px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative; /* Para que esté sobre el fondo */
+    z-index: 5; /* Asegura que esté por encima del fondo fijo */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+}
+
+.content-section h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5em;
+    margin-bottom: 40px;
+    color: var(--color-purple-neon);
+    text-shadow: 0 0 10px rgba(194, 77, 255, 0.5);
+}
+
+.content-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Iconos de la sección "Términos y Servicios" */
+.icon-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-icon {
+    width: 80px; /* Tamaño de los iconos */
+    height: auto;
+    margin: 0 20px;
+    filter: drop-shadow(0 0 10px rgba(194, 77, 255, 0.7)); /* Sombra para los iconos */
+}
+
+.legit-badge {
+    background-color: #4CAF50; /* Verde para "LEGIT" */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-left: 20px;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+}
+
+/* Columnas de información */
+.info-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Para que se ajusten en móviles */
+    margin-top: 50px;
+}
+
+.info-card {
+    background-color: rgba(var(--color-purple-deep), 0.6); /* Fondo más claro para la tarjeta */
+    border: 1px solid var(--color-purple-neon);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 15px;
+    flex: 1; /* Ocupa espacio equitativamente */
+    min-width: 280px; /* Ancho mínimo para las tarjetas */
+    max-width: 30%; /* Tres columnas en pantallas grandes */
+    box-shadow: 0 0 25px rgba(194, 77, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(194, 77, 255, 0.5);
+}
+
+.info-card p {
+    font-size: 1em;
+    color: var(--color-gray-text);
+    margin-bottom: 0;
+}
+
+/* Formulario de Contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 20px;
+    border: 1px solid var(--color-purple-neon);
+    border-radius: 8px;
+    background-color: rgba(var(--color-universe-dark), 0.8);
+    color: var(--color-white-estelar);
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-purple-neon);
+    box-shadow: 0 0 15px rgba(194, 77, 255, 0.6);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* FOOTER */
+footer {
+    background-color: #000000;
+    color: var(--color-gray-text);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+    border-top: 1px solid var(--color-purple-deep);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 4.5em;
+        letter-spacing: 5px;
+    }
+    .hero-text p {
+        font-size: 1.3em;
+    }
+    .navbar {
+        padding: 20px 30px;
+    }
+    .nav-links li {
+        margin-left: 25px;
+    }
+    .content-section h2 {
+        font-size: 2.8em;
+    }
+    .info-card {
+        max-width: 45%; /* Dos columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .nav-links {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links li {
+        margin: 0 15px 10px;
+    }
+    .hero-text h1 {
+        font-size: 3.5em;
+        letter-spacing: 3px;
+    }
+    .hero-text p {
+        font-size: 1.1em;
+        max-width: 90%;
+    }
+    .cta-button {
+        padding: 15px 35px;
+        font-size: 1.1em;
+    }
+    .content-section {
+        padding: 60px 0;
+        min-height: 50vh;
+    }
+    .content-section h2 {
+        font-size: 2.2em;
+    }
+    .content-section p {
+        font-size: 1em;
+        max-width: 90%;
+    }
+    .info-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+    .info-card {
+        max-width: 90%; /* Una columna en móviles */
+    }
+    .icon-row {
+        flex-direction: column;
+    }
+    .section-icon {
+        margin-bottom: 15px;
+    }
+    .legit-badge {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.4em;
+    }
+    .hero-text h1 {
+        font-size: 2.5em;
+    }
+    .hero-text p {
+        font-size: 0.9em;
+    }
+    .nav-links li {
+        margin: 0 10px 10px;
+    }
 }
