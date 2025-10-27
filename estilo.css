@@ -1,0 +1,148 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif; /* O la fuente que elijas */
+    color: #E0E0E0;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+.hero-parallax-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altura de la vista para pantalla completa */
+    overflow: hidden; /* Muy importante para contener las capas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #000000; /* Fondo de respaldo */
+}
+
+/* Estilos para las capas Parallax */
+.parallax-background,
+.parallax-figure,
+.parallax-planet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Transición para suavizar el movimiento Parallax (opcional) */
+    transition: transform 0.1s linear; 
+}
+
+.parallax-background {
+    background-image: url('url-de-tu-galaxia-fondo.jpg'); /* La imagen más lejana */
+    z-index: 1; /* La capa más baja */
+}
+
+.parallax-figure {
+    background-image: url('url-de-tu-figura-abstracta.png'); /* Asegúrate de que tenga fondo transparente */
+    background-size: contain; /* Para que la figura se ajuste sin cortarse */
+    background-position: center bottom; /* O donde mejor quede la figura */
+    z-index: 2; /* Encima del fondo */
+}
+
+.parallax-planet {
+    background-image: url('url-de-tu-planeta-flotante.png'); /* Con fondo transparente */
+    background-size: 30%; /* Ajusta el tamaño del planeta */
+    background-position: 80% 60%; /* Posición del planeta */
+    z-index: 3; /* Encima de la figura */
+}
+
+/* Contenido (logo, nav, texto) que debe estar encima de todo */
+.hero-content {
+    position: relative; /* Para que esté por encima de las capas parallax */
+    z-index: 10; /* Muy alto para asegurar visibilidad */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para empujar el nav arriba y el texto al centro */
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px; /* Espacio a los lados */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #C24DFF; /* Color neón para el logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #E0E0E0;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #C24DFF;
+}
+
+.hero-text {
+    flex-grow: 1; /* Para que el texto ocupe el espacio central */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-family: 'Oswald', sans-serif; /* O la fuente que elijas para titulares */
+    font-size: 5em;
+    margin: 0;
+    letter-spacing: 5px;
+    color: white; /* O un ligero degradado de púrpura a blanco */
+}
+
+.hero-text h1 .pipe {
+    color: #C24DFF; /* Color de acento para el separador */
+}
+
+.hero-text p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #D3D3D3;
+}
+
+.cta-button {
+    background-color: #C24DFF;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #A032FF;
+    transform: translateY(-3px);
+}
