@@ -25,14 +25,14 @@ body, html {
 .hero-parallax-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Altura de la vista para pantalla completa */
-    overflow: hidden; /* Importante para contener las capas Parallax */
+    height: 100vh;
+    overflow: hidden; 
     display: flex;
-    flex-direction: column; /* Permite que el nav y el texto se apilen */
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: var(--color-universe-dark); /* Fondo de respaldo */
+    background-color: var(--color-universe-dark); 
 }
 
 /* Estilos para las capas Parallax */
@@ -45,27 +45,26 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    will-change: transform; /* Sugiere al navegador optimizar animaciones */
+    will-change: transform;
 }
 
-/* Imágenes de marcador de posición para las capas */
-/* Asegúrate de reemplazar estas URLs con tus imágenes de Sora */
+/* ¡Rutas de Imagen Ajustadas a 'imagenes/'! */
 .parallax-layer.layer-1 {
-    background-image: url('images/galaxy-background.jpg'); /* La imagen más lejana */
+    background-image: url('imagenes/galaxy-background.jpg'); 
     z-index: 1; 
 }
 
 .parallax-layer.layer-2 {
-    background-image: url('images/abstract-nebula.png'); /* Figura central o nebulosa más cercana (PNG transparente) */
-    background-size: contain; /* Para que la figura se ajuste sin cortarse */
-    background-position: center 60%; /* Ajusta la posición vertical */
+    background-image: url('imagenes/abstract-nebula.png'); 
+    background-size: contain; 
+    background-position: center 60%;
     z-index: 2;
 }
 
 .parallax-layer.layer-3 {
-    background-image: url('images/floating-planet.png'); /* Planeta o detalles más cercanos (PNG transparente) */
-    background-size: 35%; /* Ajusta el tamaño del planeta */
-    background-position: 80% 50%; /* Ajusta la posición del planeta */
+    background-image: url('imagenes/floating-planet.png'); 
+    background-size: 35%;
+    background-position: 80% 50%;
     z-index: 3;
 }
 
@@ -73,15 +72,15 @@ body, html {
 /* Contenido del Héroe (Navbar y Texto) */
 .hero-content {
     position: relative;
-    z-index: 10; /* Siempre encima de las capas Parallax */
+    z-index: 10; 
     width: 100%;
-    height: 100%; /* Para que ocupe todo el espacio y justifique contenido */
+    height: 100%; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 50px; /* Espacio para el botón si está muy abajo */
-    box-sizing: border-box; /* Incluye padding en el height */
+    padding-bottom: 50px; 
+    box-sizing: border-box; 
 }
 
 /* Navbar */
@@ -99,7 +98,7 @@ body, html {
     font-size: 1.8em;
     color: var(--color-purple-neon);
     letter-spacing: 1px;
-    text-shadow: 0 0 8px rgba(194, 77, 255, 0.6); /* Efecto neón suave */
+    text-shadow: 0 0 8px rgba(194, 77, 255, 0.6); 
 }
 
 .logo .pipe {
@@ -131,7 +130,7 @@ body, html {
 
 /* Texto del Héroe */
 .hero-text {
-    flex-grow: 1; /* Para centrar el contenido verticalmente */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,11 +140,11 @@ body, html {
 
 .hero-text h1 {
     font-family: var(--font-heading);
-    font-size: 6em; /* Aumentado para mayor impacto */
+    font-size: 6em; 
     margin: 0;
-    letter-spacing: 8px; /* Más espaciado */
+    letter-spacing: 8px; 
     color: var(--color-white-estelar);
-    text-shadow: 0 0 20px rgba(194, 77, 255, 0.7); /* Sombra neón */
+    text-shadow: 0 0 20px rgba(194, 77, 255, 0.7); 
 }
 
 .hero-text h1 .pipe {
@@ -163,18 +162,18 @@ body, html {
     background-color: var(--color-purple-neon);
     color: white;
     border: none;
-    padding: 18px 45px; /* Más grande */
+    padding: 18px 45px;
     font-size: 1.3em;
     margin-top: 40px;
     cursor: pointer;
-    border-radius: 8px; /* Bordes más suaves */
+    border-radius: 8px; 
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px rgba(194, 77, 255, 0.4); /* Sombra suave */
+    box-shadow: 0 5px 15px rgba(194, 77, 255, 0.4); 
 }
 
 .cta-button:hover {
-    background-color: #A032FF; /* Púrpura más oscuro al hover */
-    transform: translateY(-5px) scale(1.02); /* Pequeño levantamiento y agrandamiento */
+    background-color: #A032FF; 
+    transform: translateY(-5px) scale(1.02); 
     box-shadow: 0 8px 20px rgba(194, 77, 255, 0.6);
 }
 
@@ -182,7 +181,7 @@ body, html {
 .content-section {
     position: relative;
     padding: 80px 0;
-    min-height: 70vh; /* Altura mínima para que el Parallax fijo se vea bien */
+    min-height: 70vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,17 +191,17 @@ body, html {
 
 /* Parallax Fijo para Secciones de Contenido */
 .parallax-fixed-bg {
-    background-image: url('images/nebula-fixed.jpg'); /* Imagen de nebulosa o espacio para fondo fijo */
-    background-attachment: fixed; /* LA CLAVE DEL PARALLAX FIJO */
+    background-image: url('imagenes/nebula-fixed.jpg'); /* ¡Ruta Ajustada! */
+    background-attachment: fixed; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative; /* Para que el overlay funcione */
+    position: relative; 
 }
 
 /* Variación para otra sección, si quieres un fondo diferente */
 .parallax-fixed-bg-2 {
-    background-image: url('images/dark-planets-fixed.jpg'); /* Otra imagen para el fondo fijo */
+    background-image: url('imagenes/dark-planets-fixed.jpg'); /* ¡Ruta Ajustada! */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -211,14 +210,14 @@ body, html {
 }
 
 .section-overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* Superposición oscura para que el texto sea legible */
+    background-color: rgba(0, 0, 0, 0.7); 
     padding: 60px 40px;
     border-radius: 10px;
     max-width: 900px;
     margin: 0 auto;
-    position: relative; /* Para que esté sobre el fondo */
-    z-index: 5; /* Asegura que esté por encima del fondo fijo */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+    position: relative; 
+    z-index: 5; 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
 }
 
 .content-section h2 {
@@ -246,14 +245,14 @@ body, html {
 }
 
 .section-icon {
-    width: 80px; /* Tamaño de los iconos */
+    width: 80px; 
     height: auto;
     margin: 0 20px;
-    filter: drop-shadow(0 0 10px rgba(194, 77, 255, 0.7)); /* Sombra para los iconos */
+    filter: drop-shadow(0 0 10px rgba(194, 77, 255, 0.7)); 
 }
 
 .legit-badge {
-    background-color: #4CAF50; /* Verde para "LEGIT" */
+    background-color: #4CAF50; 
     color: white;
     padding: 8px 15px;
     border-radius: 5px;
@@ -267,19 +266,19 @@ body, html {
 .info-columns {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Para que se ajusten en móviles */
+    flex-wrap: wrap; 
     margin-top: 50px;
 }
 
 .info-card {
-    background-color: rgba(var(--color-purple-deep), 0.6); /* Fondo más claro para la tarjeta */
+    background-color: rgba(var(--color-purple-deep), 0.6); 
     border: 1px solid var(--color-purple-neon);
     border-radius: 10px;
     padding: 30px;
     margin: 15px;
-    flex: 1; /* Ocupa espacio equitativamente */
-    min-width: 280px; /* Ancho mínimo para las tarjetas */
-    max-width: 30%; /* Tres columnas en pantallas grandes */
+    flex: 1; 
+    min-width: 280px; 
+    max-width: 30%; 
     box-shadow: 0 0 25px rgba(194, 77, 255, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -344,7 +343,7 @@ footer {
     margin: 0 auto;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* --- RESPONSIVE DESIGN --- (El responsive no necesita ajustes de ruta) */
 @media (max-width: 1024px) {
     .hero-text h1 {
         font-size: 4.5em;
@@ -363,7 +362,7 @@ footer {
         font-size: 2.8em;
     }
     .info-card {
-        max-width: 45%; /* Dos columnas en tablets */
+        max-width: 45%; 
     }
 }
 
@@ -408,7 +407,7 @@ footer {
         align-items: center;
     }
     .info-card {
-        max-width: 90%; /* Una columna en móviles */
+        max-width: 90%;
     }
     .icon-row {
         flex-direction: column;

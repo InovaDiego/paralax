@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         parallaxLayers.forEach(layer => {
             const speed = parseFloat(layer.getAttribute('data-speed'));
             // Cuanto mayor sea 'speed', más rápido se moverá el fondo
-            // El signo negativo hace que se mueva hacia arriba al hacer scroll hacia abajo
             layer.style.transform = 'translateY(' + (-scrollPos * speed) + 'px)';
         });
     });
@@ -22,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                // Calcula la posición para tener en cuenta la altura del navbar si es necesario
-                const offset = 0; // Ajusta si el navbar es fijo y cubre el inicio de la sección
+                // Calcula la posición para desplazamiento suave
+                const offset = 0; 
                 window.scrollTo({
                     top: targetElement.offsetTop - offset,
                     behavior: 'smooth'
