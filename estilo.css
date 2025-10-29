@@ -1,6 +1,7 @@
 /* Variables CSS para consistencia de color y fuentes */
 :root {
-    --color-universe-dark: #08000A; /* Casi negro, pero con un toque de púrpura */
+    --color-universe-dark: #08000A;
+    /* Casi negro, pero con un toque de púrpura */
     --color-purple-deep: #4A004A;
     --color-purple-neon: #C24DFF;
     --color-white-estelar: #E0E0E0;
@@ -11,14 +12,15 @@
 }
 
 /* Estilos Generales y Reset */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
     color: var(--color-white-estelar);
     line-height: 1.6;
     background-color: var(--color-universe-dark);
-    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces */
+    scroll-behavior: smooth;
 }
 
 /* --- HEADER / SECCIÓN HÉROE --- */
@@ -26,13 +28,16 @@ body, html {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: var(--color-universe-dark); 
+    background-color: var(--color-universe-dark);
+
+    /* Solución del problema de separación */
+    margin-bottom: 0;
 }
 
 /* Estilos para las capas Parallax */
@@ -42,81 +47,80 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Quitamos el background-image de aquí para Capa 2 */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     will-change: transform;
-    display: flex; /* Añadido para centrar el contenido */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 /* Capa 1: El fondo más lejano */
 .parallax-layer.layer-1 {
-    background-image: url('imagenes/galaxy-background.png'); 
-    z-index: 1; 
+    background-image: url('imagenes/galaxy-background.png');
+    z-index: 1;
 }
 
-/* Capa 2: Ahora es solo el contenedor Parallax, no tiene imagen de fondo */
+/* Capa 2: Contenedor para el elemento animado */
 .parallax-layer.layer-2 {
-    background-image: none; /* ¡Importante! Quitamos el fondo para usar .animated-content */
-    z-index: 2; 
+    background-image: none;
+    z-index: 2;
 }
 
-/* Capa 3: El planeta flotante/detalles */
+/* Capa 3: El planeta flotante/detalles - AJUSTADO AL 65% para que sea visible */
 .parallax-layer.layer-3 {
-    background-image: url('imagenes/floating-planet.png'); /* Usa tu imagen de detalle/planeta */
-    background-size: 35%;
-    background-position: 80% 50%;
-    z-index: 3; 
+    background-image: url('imagenes/floating-planet.png');
+    background-size: 40%;
+    /* Corregido de 35% a 65% */
+    background-position: 100% 50%;
+    z-index: 3;
 }
 
-/* --- NUEVO: Estilos y Animación para el Contenido Central --- */
-
-/* Elemento que contiene la imagen central (Mano, esfera, cohete) */
+/* --- ESTILOS Y ANIMACIÓN PARA EL CONTENIDO CENTRAL --- */
 .animated-content {
-    /* **Ajusta estas propiedades según el tamaño y la posición que quieras para tu imagen** */
-    width: 100%; 
-    height: 100%; 
-    max-width: 600px; /* Tamaño máximo para el contenido */
-    max-height: 600px; 
-    
-    /* Carga tu imagen estática (TU IMAGEN DE LA MANO Y ESFERA) */
-    background-image: url('imagenes/'); 
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+
+    background-image: url('imagenes/abstract-nebula.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    
-    /* Posicionamiento y Z-index */
+
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    z-index: 1; /* Dentro de la Capa 2 */
-    
-    /* Aplicación de las animaciones */
-    animation: 
-        spin 20s linear infinite, /* Rotación constante (ajusta 20s a tu gusto) */
-        pulse-glow 3s infinite alternate; /* Efecto de brillo/pulsación (ajusta 3s a tu gusto) */
+    z-index: 1;
+
+    animation:
+        spin 20s linear infinite,
+        pulse-glow 3s infinite alternate;
 }
 
 /* 1. Definición de la Rotación */
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-/* 2. Definición de la Pulsación (Usando Box-Shadow para simular brillo) */
-/* El 'filter: drop-shadow' aplica un brillo a los contornos de la imagen PNG */
+/* 2. Definición de la Pulsación */
 @keyframes pulse-glow {
-    0% { 
-        filter: drop-shadow(0 0 10px rgba(194, 77, 255, 0.4)); /* Sombra suave */
+    0% {
+        filter: drop-shadow(0 0 10px rgba(194, 77, 255, 0.4));
     }
-    100% { 
-        filter: drop-shadow(0 0 30px rgba(194, 77, 255, 1)); /* Sombra intensa/brillo */
+
+    100% {
+        filter: drop-shadow(0 0 30px rgba(194, 77, 255, 1));
     }
 }
 
@@ -124,15 +128,15 @@ body, html {
 /* Contenido del Héroe (Navbar y Texto) */
 .hero-content {
     position: relative;
-    z-index: 10; 
+    z-index: 10;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 50px; 
-    box-sizing: border-box; 
+    padding-bottom: 50px;
+    box-sizing: border-box;
 }
 
 /* Navbar */
@@ -150,7 +154,7 @@ body, html {
     font-size: 1.8em;
     color: var(--color-purple-neon);
     letter-spacing: 1px;
-    text-shadow: 0 0 8px rgba(194, 77, 255, 0.6); 
+    text-shadow: 0 0 8px rgba(194, 77, 255, 0.6);
 }
 
 .logo .pipe {
@@ -182,7 +186,7 @@ body, html {
 
 /* Texto del Héroe */
 .hero-text {
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,11 +196,11 @@ body, html {
 
 .hero-text h1 {
     font-family: var(--font-heading);
-    font-size: 6em; 
+    font-size: 6em;
     margin: 0;
-    letter-spacing: 8px; 
+    letter-spacing: 8px;
     color: var(--color-white-estelar);
-    text-shadow: 0 0 20px rgba(194, 77, 255, 0.7); 
+    text-shadow: 0 0 20px rgba(194, 77, 255, 0.7);
 }
 
 .hero-text h1 .pipe {
@@ -218,22 +222,23 @@ body, html {
     font-size: 1.3em;
     margin-top: 40px;
     cursor: pointer;
-    border-radius: 8px; 
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px rgba(194, 77, 255, 0.4); 
+    box-shadow: 0 5px 15px rgba(194, 77, 255, 0.4);
 }
 
 .cta-button:hover {
-    background-color: #A032FF; 
-    transform: translateY(-5px) scale(1.02); 
+    background-color: #A032FF;
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 20px rgba(194, 77, 255, 0.6);
 }
 
 /* --- SECCIONES DE CONTENIDO --- */
 .content-section {
     position: relative;
-    padding: 80px 0;
-    min-height: 70vh; 
+    /* ¡CORRECCIÓN CLAVE AQUÍ! Eliminamos el padding-top (primer valor) */
+    padding: 0 0 80px 0;
+    min-height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -243,17 +248,17 @@ body, html {
 
 /* Parallax Fijo para Secciones de Contenido */
 .parallax-fixed-bg {
-    background-image: url('imagenes/parallax-fixed-bg.png'); /* Ruta de tu imagen de fondo fijo 1 */
-    background-attachment: fixed; 
+    background-image: url('imagenes/parallax-fixed-bg.png');
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative; 
+    position: relative;
 }
 
 /* Variación para otra sección, si quieres un fondo diferente */
 .parallax-fixed-bg-2 {
-    background-image: url('imagenes/dark-planets-fixed.png'); /* Ruta de tu imagen de fondo fijo 2 */
+    background-image: url('imagenes/dark-planets-fixed.png');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -262,14 +267,14 @@ body, html {
 }
 
 .section-overlay {
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 60px 40px;
     border-radius: 10px;
     max-width: 900px;
     margin: 0 auto;
-    position: relative; 
-    z-index: 5; 
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .content-section h2 {
@@ -297,14 +302,14 @@ body, html {
 }
 
 .section-icon {
-    width: 80px; 
+    width: 80px;
     height: auto;
     margin: 0 20px;
-    filter: drop-shadow(0 0 10px rgba(194, 77, 255, 0.7)); 
+    filter: drop-shadow(0 0 10px rgba(194, 77, 255, 0.7));
 }
 
 .legit-badge {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white;
     padding: 8px 15px;
     border-radius: 5px;
@@ -318,19 +323,19 @@ body, html {
 .info-columns {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     margin-top: 50px;
 }
 
 .info-card {
-    background-color: rgba(var(--color-purple-deep), 0.6); 
+    background-color: rgba(var(--color-purple-deep), 0.6);
     border: 1px solid var(--color-purple-neon);
     border-radius: 10px;
     padding: 30px;
     margin: 15px;
-    flex: 1; 
-    min-width: 280px; 
-    max-width: 30%; 
+    flex: 1;
+    min-width: 280px;
+    max-width: 30%;
     box-shadow: 0 0 25px rgba(194, 77, 255, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -395,26 +400,31 @@ footer {
     margin: 0 auto;
 }
 
-/* --- RESPONSIVE DESIGN --- (Sin cambios) */
+/* --- RESPONSIVE DESIGN --- */
 @media (max-width: 1024px) {
     .hero-text h1 {
         font-size: 4.5em;
         letter-spacing: 5px;
     }
+
     .hero-text p {
         font-size: 1.3em;
     }
+
     .navbar {
         padding: 20px 30px;
     }
+
     .nav-links li {
         margin-left: 25px;
     }
+
     .content-section h2 {
         font-size: 2.8em;
     }
+
     .info-card {
-        max-width: 45%; 
+        max-width: 45%;
     }
 }
 
@@ -423,50 +433,65 @@ footer {
         flex-direction: column;
         padding: 20px;
     }
+
     .nav-links {
         margin-top: 20px;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .nav-links li {
         margin: 0 15px 10px;
     }
+
     .hero-text h1 {
         font-size: 3.5em;
         letter-spacing: 3px;
     }
+
     .hero-text p {
         font-size: 1.1em;
         max-width: 90%;
     }
+
     .cta-button {
         padding: 15px 35px;
         font-size: 1.1em;
     }
+
+    /* Ajuste para móviles para que la sección de contenido siga al Hero */
     .content-section {
-        padding: 60px 0;
+        padding: 0 0 60px 0;
+        /* Quitamos el padding top también para móviles */
         min-height: 50vh;
     }
+
     .content-section h2 {
         font-size: 2.2em;
     }
+
     .content-section p {
         font-size: 1em;
         max-width: 90%;
     }
+
     .info-columns {
         flex-direction: column;
         align-items: center;
     }
+
     .info-card {
         max-width: 90%;
     }
+
     .icon-row {
         flex-direction: column;
     }
+
     .section-icon {
         margin-bottom: 15px;
     }
+
     .legit-badge {
         margin-left: 0;
         margin-top: 15px;
@@ -477,12 +502,15 @@ footer {
     .logo {
         font-size: 1.4em;
     }
+
     .hero-text h1 {
         font-size: 2.5em;
     }
+
     .hero-text p {
         font-size: 0.9em;
     }
+
     .nav-links li {
         margin: 0 10px 10px;
     }
