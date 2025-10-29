@@ -83,7 +83,7 @@ body, html {
     max-height: 600px; 
     
     /* Carga tu imagen estática (TU IMAGEN DE LA MANO Y ESFERA) */
-    background-image: url('imagenes/abstract-nebula.png'); 
+    background-image: url('imagenes/'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -253,7 +253,7 @@ body, html {
 
 /* Variación para otra sección, si quieres un fondo diferente */
 .parallax-fixed-bg-2 {
-    background-image: url('imagenes/dark-planets-fixed.jpg'); /* Ruta de tu imagen de fondo fijo 2 */
+    background-image: url('imagenes/dark-planets-fixed.png'); /* Ruta de tu imagen de fondo fijo 2 */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
