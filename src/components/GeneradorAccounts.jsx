@@ -20,18 +20,33 @@ const proofs = [
     author: 'Comprador recurrente',
   },
   {
+    image: '/imagenes/Proof_4.webp',
+    title: 'Vouch #4',
+    author: 'Servicio 100% Legit',
+  },
+  {
     image: '/imagenes/Proof_5.webp',
     title: 'Vouch #5',
     author: 'Servicio 100% Legit',
   },
   {
-    image: '/imagenes/Proof_6.webp',
+    image: '/imagenes/Proof_6.jpg',
     title: 'Vouch #6',
     author: 'Servicio 100% Legit',
   },
   {
     image: '/imagenes/Proof_7.webp',
     title: 'Vouch #7',
+    author: 'Servicio 100% Legit',
+  },
+  {
+    image: '/imagenes/Proof_8.webp',
+    title: 'Vouch #8',
+    author: 'Servicio 100% Legit',
+  },
+  {
+    image: '/imagenes/Proof_9.webp',
+    title: 'Vouch #9',
     author: 'Servicio 100% Legit',
   },
 ];
