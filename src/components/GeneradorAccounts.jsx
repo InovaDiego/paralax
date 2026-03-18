@@ -20,17 +20,17 @@ const proofs = [
     author: 'Comprador recurrente',
   },
   {
-    image: '/imagenes/Proof_4.webp',
+    image: '/imagenes/Proof_5.webp',
     title: 'Vouch #5',
     author: 'Servicio 100% Legit',
   },
   {
-    image: '/imagenes/Proof_4.webp',
+    image: '/imagenes/Proof_6.webp',
     title: 'Vouch #6',
     author: 'Servicio 100% Legit',
   },
   {
-    image: '/imagenes/Proof_4.webp',
+    image: '/imagenes/Proof_7.webp',
     title: 'Vouch #7',
     author: 'Servicio 100% Legit',
   },
