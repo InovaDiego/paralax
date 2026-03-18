@@ -5,6 +5,7 @@ import GenerateSection from './components/GenerateSection';
 import ContactSection from './components/ContactSection';
 import AppFooter from './components/Footer';
 import ProofsSection from './components/GeneradorAccounts';
+import AboutMe from './components/AboutMe';
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
       <ScrollTopButton />
       <HeroSection />
       <main>
-        <TermsSection />
+        <AboutMe />
         <GenerateSection />
         <ProofsSection />
+        <TermsSection />
         <ContactSection />
       </main>
       <AppFooter />

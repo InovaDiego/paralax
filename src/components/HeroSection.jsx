@@ -36,7 +36,9 @@ function HeroSection() {
             BIG<span className="pipe">|</span>UNIVERSE
           </h1>
           <p>NEW DISPENSER ACCOUNTS Y MÁS!</p>
-          <button className="cta-button">Clic aquí</button>
+          <a href="#generar" className="cta-button discord-btn">
+            Empezar a Generar
+          </a>
         </div>
       </div>
     </header>

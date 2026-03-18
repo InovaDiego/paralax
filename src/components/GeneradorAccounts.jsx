@@ -1,5 +1,7 @@
 import { useState } from 'react';
-
+/*
+AQUI ESTA EL APARTAD DE PROOF AND VOUCHES
+*/
 const proofs = [
   {
     image: '/imagenes/Proof_1.webp',
