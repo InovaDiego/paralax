@@ -13,6 +13,9 @@ function Navbar() {
             <a href="#generar">Generar</a>
           </li>
           <li className="mx-3">
+            <a href="#legit">Proofs</a>
+          </li>
+          <li className="mx-3">
             <a href="#terminos">Términos y Condiciones</a>
           </li>
           <li className="mx-3">

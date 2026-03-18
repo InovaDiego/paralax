@@ -368,6 +368,129 @@ html {
 }
 
 /* =========================================================
+   ✅ BLOQUE GENERADOR + PROOFS/VOUCHES
+   ========================================================= */
+.generador-accounts {
+  max-width: 980px;
+}
+
+.discord-btn {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.proofs-block {
+  margin-top: 48px;
+}
+
+.proofs-block h3 {
+  font-family: var(--font-heading);
+  margin: 0;
+  font-size: 2em;
+  letter-spacing: 1px;
+  color: var(--color-white-estelar);
+}
+
+.proofs-subtitle {
+  margin-top: 12px;
+  margin-bottom: 25px;
+  color: var(--color-gray-text);
+}
+
+.proofs-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.carousel-control {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(194, 77, 255, 0.9);
+  background-color: rgba(8, 0, 10, 0.9);
+  color: var(--color-white-estelar);
+  font-size: 1.4em;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+  transform: scale(1.08);
+  background-color: rgba(194, 77, 255, 0.15);
+  box-shadow: 0 0 18px rgba(194, 77, 255, 0.5);
+}
+
+.proof-slide {
+  width: min(100%, 650px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(194, 77, 255, 0.45);
+  box-shadow: 0 0 26px rgba(0, 0, 0, 0.55);
+  background: rgba(8, 0, 10, 0.8);
+}
+
+.proof-image {
+  width: 100%;
+  height: 300px;
+  display: block;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.proof-caption {
+  padding: 20px;
+  text-align: left;
+}
+
+.proof-caption h4 {
+  margin: 0;
+  color: var(--color-purple-neon);
+  font-size: 1.4em;
+}
+
+.proof-caption p {
+  margin: 12px 0;
+  font-size: 1.05em;
+}
+
+.proof-caption span {
+  color: #9ad8ff;
+  font-size: 0.95em;
+}
+
+.carousel-indicators {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.indicator-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(194, 77, 255, 0.8);
+  background-color: rgba(224, 224, 224, 0.25);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.indicator-dot.active {
+  background-color: var(--color-purple-neon);
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(194, 77, 255, 0.8);
+}
+
+/* =========================================================
    📬 FORMULARIO DE CONTACTO
    ========================================================= */
 .contact-form {
@@ -528,6 +651,23 @@ footer {
   .info-card {
     max-width: 90%;
   }
+
+  .proofs-carousel {
+    gap: 10px;
+  }
+
+  .carousel-control {
+    width: 38px;
+    height: 38px;
+  }
+
+  .proof-image {
+    height: 220px;
+  }
+
+  .proof-caption {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -539,5 +679,13 @@ footer {
   }
   .hero-text p {
     font-size: 0.9em;
+  }
+
+  .proofs-carousel {
+    flex-direction: column;
+  }
+
+  .proof-slide {
+    width: 100%;
   }
 }

@@ -4,6 +4,7 @@ import TermsSection from './components/TermsSection';
 import GenerateSection from './components/GenerateSection';
 import ContactSection from './components/ContactSection';
 import AppFooter from './components/Footer';
+import ProofsSection from './components/GeneradorAccounts';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <main>
         <TermsSection />
         <GenerateSection />
+        <ProofsSection />
         <ContactSection />
       </main>
       <AppFooter />

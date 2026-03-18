@@ -1,3 +1,5 @@
+const DISCORD_INVITE_URL = 'https://discord.gg/TU-INVITE-PERMANENTE';
+
 function GenerateSection() {
   return (
     <section id="generar" className="content-section parallax-fixed-bg-2">
@@ -7,7 +9,14 @@ function GenerateSection() {
           Descubre cómo obtener tus nuevas cuentas premium de forma rápida y
           segura.
         </p>
-        <button className="cta-button">Empezar a Generar</button>
+        <a
+          href={DISCORD_INVITE_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="cta-button discord-btn"
+        >
+          Unirme al Discord
+        </a>
       </div>
     </section>
   );
