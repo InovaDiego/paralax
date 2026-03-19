@@ -27,7 +27,7 @@ const proofs = [
     author: 'Servicio 100% Legit',
   },
   {
-    image: '/imagenes/Proof_5.webp',
+    image: '/imagenes/Proof_5.jpg',
     title: 'Vouch #5',
     author: 'Servicio 100% Legit',
   },

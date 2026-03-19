@@ -1,4 +1,4 @@
-const DISCORD_INVITE_URL = 'https://discord.gg/TU-INVITE-PERMANENTE';
+const DISCORD_INVITE_URL = 'https://discord.gg/4jtUTmxBTM';
 
 function GenerateSection() {
   return (
